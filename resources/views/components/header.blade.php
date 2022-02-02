@@ -1,7 +1,7 @@
 <div class="w-full text-center text-red-400">
     {{ $timeLabel }} - <b>{{ $time }}</b>
 </div>
-<div class="w-full mb-1">
+<div class="w-full">
     <span class="pr-1 w-1/2 text-right">
         {{ $score['home']['team'] }}
         <b class="ml-1 px-1 bg-gray-600">

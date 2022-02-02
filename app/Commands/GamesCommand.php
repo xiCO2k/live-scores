@@ -3,7 +3,6 @@
 namespace App\Commands;
 
 use Illuminate\Console\Scheduling\Schedule;
-use Illuminate\Support\Facades\Http;
 use LaravelZero\Framework\Commands\Command;
 use function Termwind\{render, live, select, terminal};
 
@@ -16,7 +15,7 @@ class GamesCommand extends Command
         $select = select(fn ($options, $active) => view('games', [
             'leagues' => $this->getAvailableGames(),
             'active' => $active,
-        ]), collect($this->getAvailableGames())->pluck('games')->flatten(1)->toArray());
+        ]), $this->getAvailableGames(true));
 
         $select->refreshEvery(seconds: 1);
         $select->render();
@@ -33,9 +32,9 @@ class GamesCommand extends Command
         ]))->refreshEvery(seconds: 1);
     }
 
-    private function getAvailableGames()
+    private function getAvailableGames($onlyGames = false): array
     {
-        return [[
+        $leagues = [[
             'country' => 'Italy',
             'name' => 'Serie A',
             'games' => [[
@@ -77,11 +76,17 @@ class GamesCommand extends Command
                     'total' => 2,
                 ],
                 'away' => [
-                    'team' => 'Eintracht Frankfurt',
+                    'team' => 'E. Frankfurt',
                     'total' => 1,
                 ],
             ]]
         ]];
+
+        if (! $onlyGames) {
+            return $leagues;
+        }
+
+        return collect($leagues)->pluck('games')->flatten(1)->toArray();
     }
 
     private function getScores(): array
