@@ -12,6 +12,25 @@ class GamesCommand extends Command
 
     public function handle()
     {
+        render(view('game', [
+            'timeLabel' => '1st half',
+            'time' => date('i:s'),
+            'score' => $this->getScores(),
+            'events' => $this->getEvents(),
+        ]));
+
+
+
+
+
+
+
+
+
+
+
+
+        return;
         $select = select(fn ($options, $active) => view('games', [
             'leagues' => $this->getAvailableGames(),
             'active' => $active,
@@ -50,7 +69,6 @@ class GamesCommand extends Command
                 ],
             ]]
         ], [
-
             'country' => 'Netherlands',
             'name' => 'Eredivisie',
             'games' => [[
@@ -66,17 +84,17 @@ class GamesCommand extends Command
                 ],
             ]]
         ], [
-            'country' => 'Germany',
-            'name' => 'Bundesliga',
+            'country' => 'Portugal',
+            'name' => 'Liga Bwin',
             'games' => [[
                 'value' => 2,
                 'time' => now()->format('i:s'),
                 'home' => [
-                    'team' => 'B. Monchengladbach',
-                    'total' => 2,
+                    'team' => 'SL Benfica',
+                    'total' => 3,
                 ],
                 'away' => [
-                    'team' => 'E. Frankfurt',
+                    'team' => 'FC Porto',
                     'total' => 1,
                 ],
             ]]
@@ -93,11 +111,11 @@ class GamesCommand extends Command
     {
         return [
             'home' => [
-                'team' => 'B. Monchengladbach',
-                'total' => 2,
+                'team' => 'SL Benfica',
+                'total' => 3,
             ],
             'away' => [
-                'team' => 'Eintracht Frankfurt',
+                'team' => 'FC Porto',
                 'total' => 1,
             ],
         ];
@@ -107,63 +125,106 @@ class GamesCommand extends Command
     {
         return [[
             'team' => 'home',
-            'type' => 'goal',
-            'minute' => 6,
-            'player' => 'Neuhaus F.',
-            'extra' => 'Scally J.',
-        ], [
-            'team' => 'away',
-            'type' => 'sub',
-            'minute' => 28,
-            'out' => 'Jakic K.',
-            'in' => 'Rode S.',
-        ], [
-            'team' => 'away',
             'type' => 'card',
             'card' => 'yellow',
-            'minute' => 39,
-            'player' => 'Tuta',
-        ], [
-            'team' => 'away',
-            'type' => 'card',
-            'card' => 'yellow',
-            'minute' => 42,
-            'player' => 'Borre R.',
+            'minute' => 16,
+            'player' => 'Dias G.',
         ], [
             'team' => 'home',
             'type' => 'card',
             'card' => 'yellow',
-            'minute' => 43,
-            'player' => 'Embolo B.',
+            'minute' => 24,
+            'player' => 'Ramos G.',
+        ], [
+            'team' => 'home',
+            'type' => 'goal',
+            'minute' => 28,
+            'player' => 'Ramos G.',
         ], [
             'team' => 'away',
+            'type' => 'card',
+            'card' => 'yellow',
+            'minute' => 30,
+            'player' => 'Grujic M.',
+        ], [
+            'team' => 'away',
+            'type' => 'card',
+            'card' => 'yellow',
+            'minute' => 40,
+            'player' => 'Pepe',
+        ], [
+            'team' => 'home',
             'type' => 'goal',
-            'minute' => 45,
-            'player' => 'Borre R.',
+            'minute' => 46,
+            'player' => 'Nunes D.',
+            'extra' => '(Penalti)',
         ], [
             'type' => 'halftime',
         ], [
             'team' => 'home',
-            'type' => 'goal',
-            'minute' => 50,
-            'player' => 'Lindstrom J.',
+            'type' => 'card',
+            'card' => 'yellow',
+            'minute' => 53,
+            'player' => 'Nunez D.',
+        ], [
+            'team' => 'away',
+            'type' => 'sub',
+            'minute' => 61,
+            'out' => 'Seferovic H.',
+            'in' => 'Dias G.',
+        ], [
+            'team' => 'home',
+            'type' => 'card',
+            'card' => 'yellow',
+            'minute' => 62,
+            'player' => 'Lazaro V.',
         ], [
             'team' => 'home',
             'type' => 'goal',
-            'minute' => 54,
-            'player' => 'Bensebaini R.',
-            'extra' => '(Penalti)',
+            'minute' => 63,
+            'player' => 'Ramos G.',
         ], [
             'team' => 'away',
-            'type' => 'goal',
-            'minute' => 55,
-            'player' => 'Kamada D.',
+            'type' => 'sub',
+            'minute' => 64,
+            'out' => 'Galeno',
+            'in' => 'Evanilson',
+        ], [
+            'team' => 'home',
+            'type' => 'card',
+            'card' => 'yellow',
+            'minute' => 71,
+            'player' => 'Almeida A.',
+        ], [
+            'team' => 'home',
+            'type' => 'card',
+            'card' => 'yellow',
+            'minute' => 71,
+            'player' => 'Otamendi N.',
+        ], [
+            'team' => 'home',
+            'type' => 'sub',
+            'minute' => 73,
+            'out' => 'Lazaro V.',
+            'in' => 'João Mário',
+        ], [
+            'team' => 'home',
+            'type' => 'sub',
+            'minute' => 73,
+            'out' => 'Ramos G.',
+            'in' => 'Yaremchuk R.',
         ], [
             'team' => 'away',
             'type' => 'card',
-            'card' => 'red',
-            'minute' => 76,
-            'player' => 'Borre R.',
-        ]];
+            'card' => 'yellow',
+            'minute' => 79,
+            'player' => 'Taremi M.',
+        ], [
+            'team' => 'away',
+            'type' => 'goal',
+            'minute' => 95,
+            'player' => 'Zaidu',
+            'extra' => '(Pepê)',
+        ], ];
     }
 }
