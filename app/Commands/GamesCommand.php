@@ -12,11 +12,9 @@ class GamesCommand extends Command
 
     public function handle()
     {
-        render(view('game', [
-            'timeLabel' => '1st half',
-            'time' => date('i:s'),
-            'score' => $this->getScores(),
-            'events' => $this->getEvents(),
+        render(view('games', [
+            'leagues' => $this->getAvailableGames(),
+            'active' => null,
         ]));
 
 

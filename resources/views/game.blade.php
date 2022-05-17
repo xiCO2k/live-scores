@@ -4,8 +4,8 @@
         :time-label="$timeLabel"
         :score="$score"
     />
-    <div class="w-full my-1">
-        @foreach($events as $event)
+    <div class="my-1">
+        @foreach ($events as $event)
             @if ($event['type'] === 'goal')
                 <x-event-goal :event="$event" />
             @elseif ($event['type'] === 'sub')

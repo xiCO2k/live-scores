@@ -14,7 +14,7 @@
                         -
                     @endif
                 </span>
-                <b class="text-black px-1 bg-blue-300 mr-2">
+                <b class="text-red-500 mr-2">
                     {{ $game['time'] }}
                 </b>
                 <span class="text-right">
