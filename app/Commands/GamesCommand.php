@@ -12,12 +12,14 @@ class GamesCommand extends Command
 
     public function handle(GamesRepository $gamesRepository)
     {
-        $games = $gamesRepository->fetch();
+        live(function () use ($gamesRepository) {
+            $games = $gamesRepository->fetch();
 
-        render(view('games', [
-            'leagues' => $games['Stages'],
-            'active' => null,
-        ]));
+            return view('games', [
+                'leagues' => $games['Stages'],
+                'active' => null,
+            ]);
+        })->refreshEvery(seconds: 20);
 
 
 
