@@ -2,7 +2,7 @@
 
 namespace App\Commands;
 
-use Illuminate\Console\Scheduling\Schedule;
+use App\Lib\LiveFootball\GamesRepository;
 use LaravelZero\Framework\Commands\Command;
 use function Termwind\{render, live, select, terminal};
 
@@ -10,10 +10,12 @@ class GamesCommand extends Command
 {
     protected $signature = 'games';
 
-    public function handle()
+    public function handle(GamesRepository $gamesRepository)
     {
+        $games = $gamesRepository->fetch();
+
         render(view('games', [
-            'leagues' => $this->getAvailableGames(),
+            'leagues' => $games['Stages'],
             'active' => null,
         ]));
 

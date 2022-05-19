@@ -3,9 +3,9 @@
 
     @foreach ($leagues as $league)
         <div class="mt-1">
-            <b class="uppercase">{{ $league['country'] }}</b> - {{ $league['name'] }}
+            <b class="uppercase">{{ $league['Cnm'] }}</b> - {{ $league['Snm'] }}
         </div>
-        @foreach ($league['games'] as $game)
+        @foreach ($league['Events'] as $game)
             <div>
                 <span class="mr-2">
                     @if ($active && $active['value'] === $game['value'])
@@ -15,20 +15,20 @@
                     @endif
                 </span>
                 <b class="text-red-500 mr-2">
-                    {{ $game['time'] }}
+                    {{ $game['Eps'] }}
                 </b>
                 <span class="text-right">
-                    {{ $game['home']['team'] }}
+                    {{ $game['T1'][0]['Nm'] }}
                     <b class="px-1 bg-gray-600">
-                        {{ $game['home']['total'] }}
+                        {{ $game['Tr1'] }}
                     </b>
                 </span>
                 <span class="text-gray mx-1">x</span>
                 <span class="text-left">
                     <b class="px-1 bg-gray-600">
-                        {{ $game['away']['total'] }}
+                        {{ $game['Tr2'] }}
                     </b>
-                    {{ $game['away']['team'] }}
+                    {{ $game['T2']['0']['Nm'] }}
                 </span>
             </div>
         @endforeach
