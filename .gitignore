@@ -3,3 +3,7 @@
 /.vscode
 /.vagrant
 .phpunit.result.cache
+.env
+
+# OSX Stuff
+.DS_Store

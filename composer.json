@@ -17,6 +17,8 @@
     ],
     "require": {
         "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "illuminate/http": "^9.0",
         "illuminate/view": "^9.0",
         "laravel-zero/framework": "^9.0",
         "nunomaduro/termwind": "dev-feat/select"

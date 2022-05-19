@@ -31,6 +31,12 @@ For full documentation, visit [laravel-zero.com](https://laravel-zero.com/).
 - PayPal: [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L)
 - Patreon: [Donate](https://www.patreon.com/nunomaduro)
 
+## Get started
+
+- Copy `.env-example` to a new file and save it as `.env`.
+- Use the `APP_ENV` to get mocked data. To get live data, simply remove this key or set it to something else other than **local**.
+- Run with `php application games`.
+
 ## License
 
 Laravel Zero is an open-source software licensed under the MIT license.
