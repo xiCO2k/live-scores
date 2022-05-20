@@ -1,18 +1,18 @@
 {
-    "name": "laravel-zero/laravel-zero",
-    "description": "The Laravel Zero Framework.",
-    "keywords": ["framework", "laravel", "laravel zero", "console", "cli"],
-    "homepage": "https://laravel-zero.com",
+    "name": "xiCO2k/football-live-scores-cli",
+    "description": "Football Live Scores CLI",
+    "keywords": ["console", "cli", "soccer", "football", "live", "livescores"],
+    "homepage": "https://github.com/xiCO2k/football-live-scores-cli",
     "type": "project",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/laravel-zero/laravel-zero/issues",
-        "source": "https://github.com/laravel-zero/laravel-zero"
+        "issues": "https://github.com/xiCO2k/football-live-scores-cli/issues",
+        "source": "https://github.com/xiCO2k/football-live-scores-cli"
     },
     "authors": [
         {
-            "name": "Nuno Maduro",
-            "email": "enunomaduro@gmail.com"
+            "name": "Francisco Madeira",
+            "email": "xico2k@gmail.com"
         }
     ],
     "require": {
@@ -49,5 +49,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["application"]
+    "bin": ["football-live-scores-cli"]
 }
