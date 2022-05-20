@@ -1,6 +1,6 @@
-<h1 align="center" style="border:none !important">
-  Football Live Scores CLI
-</h1>
+<p align="center">
+    <img src="/art/header.png" alt="Social Card of Football Live Scores CLI">
+</p>
 
 ## Get started
 
@@ -8,3 +8,9 @@
 - Use the `APP_ENV` to get mocked data. To get live data, simply remove this key or set it to something else other than **local**.
 - Run with `php football-live-scores-cli`.
 
+## Credits
+
+- [Francisco Madeira](https://github.com/xiCO2k)
+- [All Contributors](../../contributors)
+
+And a special thanks to **João Cavaco** for the logo `&&` [Caneco](https://twitter.com/caneco) for the banner ✨
