@@ -12,31 +12,13 @@ class GamesCommand extends Command
 
     public function handle(GamesRepository $gamesRepository)
     {
-        live(function () use ($gamesRepository) {
+        $select = select(function($options, $active) use ($gamesRepository) {
             $games = $gamesRepository->fetch();
-
             return view('games', [
-                'leagues' => $games['Stages'],
-                'active' => null,
+                'leagues' => $games,
+                'active' => $active,
             ]);
-        })->refreshEvery(seconds: 20);
-
-
-
-
-
-
-
-
-
-
-
-
-        return;
-        $select = select(fn ($options, $active) => view('games', [
-            'leagues' => $this->getAvailableGames(),
-            'active' => $active,
-        ]), $this->getAvailableGames(true));
+        });
 
         $select->refreshEvery(seconds: 1);
         $select->render();

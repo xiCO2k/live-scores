@@ -1,5 +1,5 @@
 <div class='mx-2 my-1 space-y-1'>
-    {{-- <div class="px-1 bg-green text-black font-bold">Select a game:</div> --}}
+    <div class="px-1 bg-green text-black font-bold">Select a game:</div>
     @foreach ($leagues as $league)
         <div>
             <x-league-title

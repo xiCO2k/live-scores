@@ -27,4 +27,12 @@ class GamesRepository
 
         return json_decode($data, true);
     }
+
+    public function fetchGame(string $id): array
+    {
+        return json_decode(
+            Http::get(sprintf('https://prod-public-api.livescore.com/v1/api/app/match-x/soccer/%s/1.00?MD=1', $id)),
+            true
+        );
+    }
 }
