@@ -17,7 +17,7 @@
 You can install this application via composer:
 
 ```bash
-composer global require xiCO2k/football-live-scores
+composer global require xico2k/football-live-scores
 ```
 ---
 

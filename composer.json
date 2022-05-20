@@ -1,13 +1,13 @@
 {
-    "name": "xiCO2k/football-live-scores-cli",
-    "description": "Football Live Scores CLI",
+    "name": "xico2k/football-live-scores",
+    "description": "Football Live Scores",
     "keywords": ["console", "cli", "soccer", "football", "live", "livescores"],
-    "homepage": "https://github.com/xiCO2k/football-live-scores-cli",
+    "homepage": "https://github.com/xiCO2k/football-live-scores",
     "type": "project",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/xiCO2k/football-live-scores-cli/issues",
-        "source": "https://github.com/xiCO2k/football-live-scores-cli"
+        "issues": "https://github.com/xiCO2k/football-live-scores/issues",
+        "source": "https://github.com/xiCO2k/football-live-scores"
     },
     "authors": [
         {
@@ -49,5 +49,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["football-live-scores-cli"]
+    "bin": ["football-live-scores"]
 }
