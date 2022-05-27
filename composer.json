@@ -29,9 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
@@ -45,6 +43,9 @@
         "optimize-autoloader": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
+        },
+        "platform": {
+            "php": "8.1"
         }
     },
     "minimum-stability": "dev",
