@@ -21,6 +21,7 @@
         "illuminate/http": "^9.0",
         "illuminate/view": "^9.0",
         "laravel-zero/framework": "^9.0",
+        "nunomaduro/larastan": "^2.1",
         "nunomaduro/termwind": "dev-feat/select"
     },
     "require-dev": {
