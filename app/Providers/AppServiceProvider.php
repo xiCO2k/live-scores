@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use LaravelZero\Framework\Application;
 
 class AppServiceProvider extends ServiceProvider
 {

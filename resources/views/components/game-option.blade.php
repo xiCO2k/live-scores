@@ -11,19 +11,19 @@
         @endif
     </span>
     <b class="text-red-500 w-6 mr-1">
-        {{ $game['Eps'] }}
+        {{ $game['time'] }}
     </b>
     <span class="text-right">
-        {{ $game['T1']['0']['Nm'] }}
+        {{ $game['team_1']['name'] }}
         <b class="px-1 bg-gray-600">
-            {{ $game['Tr1'] ?? '0' }}
+            {{ $game['team_1']['score'] }}
         </b>
     </span>
     <span class="text-gray mx-1">x</span>
     <span class="text-left">
         <b class="px-1 bg-gray-600">
-            {{ $game['Tr2'] ?? '0' }}
+            {{ $game['team_2']['score'] }}
         </b>
-        {{ $game['T2']['0']['Nm'] }}
+        {{ $game['team_2']['name'] }}
     </span>
 </div>

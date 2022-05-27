@@ -1,18 +1,23 @@
 <div class='mx-2 my-1 space-y-1'>
     {{-- <div class="px-1 bg-green text-black font-bold">Select a game:</div> --}}
-    @foreach ($leagues as $league)
-        <div>
-            <x-league-title
-                :category="$league['Cnm']"
-                :stage="$league['Snm']"
-            />
-
-            @foreach ($league['Events'] as $game)
-                <x-game-option
-                    :active="$active"
-                    :game="$game"
+    @foreach ($sports as $sport => $leagues)
+        @switch ($sport)
+            @case('football')
+                <x-sport-leagues
+                    :sport="$sport"
+                    :leagues="$leagues"
+                    title="⚽️ Football"
+                    title-class="bg-green-300 text-black"
                 />
-            @endforeach
-        </div>
+            @break
+            @case('basketball')
+                <x-sport-leagues
+                    :sport="$sport"
+                    :leagues="$leagues"
+                    title="🏀 Basketball"
+                    title-class="bg-orange-300 text-black"
+                />
+            @break
+        @endswitch
     @endforeach
 </div>
