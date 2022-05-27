@@ -10,7 +10,7 @@ class GamesCommand extends Command
 {
     protected $signature = 'games';
 
-    public function handle(Scores $scores)
+    public function handle(Scores $scores): void
     {
         live(fn () => view('games', [
             'sports' => $scores->getScores(),
