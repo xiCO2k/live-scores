@@ -4,7 +4,9 @@ namespace App\Commands;
 
 use App\Lib\LiveFootball\GamesRepository;
 use LaravelZero\Framework\Commands\Command;
-use function Termwind\{render, live, select, terminal};
+use function Termwind\live;
+use function Termwind\select;
+use function Termwind\terminal;
 
 class GamesCommand extends Command
 {
@@ -69,7 +71,7 @@ class GamesCommand extends Command
                     'team' => 'Cagliari',
                     'total' => 0,
                 ],
-            ]]
+            ]],
         ], [
             'country' => 'Netherlands',
             'name' => 'Eredivisie',
@@ -84,7 +86,7 @@ class GamesCommand extends Command
                     'team' => 'Groningen',
                     'total' => 0,
                 ],
-            ]]
+            ]],
         ], [
             'country' => 'Portugal',
             'name' => 'Liga Bwin',
@@ -99,7 +101,7 @@ class GamesCommand extends Command
                     'team' => 'FC Porto',
                     'total' => 1,
                 ],
-            ]]
+            ]],
         ]];
 
         if (! $onlyGames) {
