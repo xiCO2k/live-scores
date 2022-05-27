@@ -51,5 +51,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["football-live-scores"]
+    "bin": ["builds/football-live-scores"]
 }
