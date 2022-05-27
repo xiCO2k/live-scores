@@ -3,6 +3,7 @@
 /.vscode
 /.vagrant
 .phpunit.result.cache
+.php-cs-fixer.cache
 .env
 
 # OSX Stuff
