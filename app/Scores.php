@@ -24,7 +24,7 @@ class Scores
     /**
      * Gets the Scores from the multiple sports available.
      *
-     * @param $sportsToShow string[]
+     * @param string[] $sportsToShow
      * @return array<string, Collection>
      */
     public function getScores(array $sportsToShow = []): array

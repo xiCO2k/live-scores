@@ -31,7 +31,7 @@ class GamesCommand extends Command
     }
 
     /**
-     * @param $sportsToShow string[]
+     * @params string[] $sportsToShow
      */
     private function getScores(array $sportsToShow = []): array
     {
