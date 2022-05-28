@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1e77a5525c75c90039a3824fa1daf94",
+    "content-hash": "0f4e5838eafa9ead1b60ab509748e4cd",
     "packages": [],
     "packages-dev": [
         {
@@ -3001,16 +3001,16 @@
         },
         {
             "name": "nunomaduro/termwind",
-            "version": "dev-feat/select",
+            "version": "dev-feat/live",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "4e2fd0d267c5f2d596a934e76dccb3045eede844"
+                "reference": "e0bdbd196038dd6957e08748dd827dec8eab0587"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/4e2fd0d267c5f2d596a934e76dccb3045eede844",
-                "reference": "4e2fd0d267c5f2d596a934e76dccb3045eede844",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/e0bdbd196038dd6957e08748dd827dec8eab0587",
+                "reference": "e0bdbd196038dd6957e08748dd827dec8eab0587",
                 "shasum": ""
             },
             "require": {
@@ -3031,13 +3031,6 @@
                 "thecodingmachine/phpstan-strict-rules": "^1.0.0"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Termwind\\Laravel\\TermwindServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
                 "files": [
                     "src/Functions.php"
@@ -3067,7 +3060,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/feat/select"
+                "source": "https://github.com/nunomaduro/termwind/tree/feat/live"
             },
             "funding": [
                 {
@@ -3083,7 +3076,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-16T23:32:31+00:00"
+            "time": "2022-05-28T02:05:16+00:00"
         },
         {
             "name": "pestphp/pest",

@@ -9,6 +9,8 @@ use Illuminate\Support\Collection;
 
 abstract class LiveScoresApi implements ScoresApi
 {
+    public ?string $endpointPath = null;
+
     public function __construct(
         private Factory $client = new Factory(),
         private string $baseUrl = 'https://prod-public-api.livescore.com/v1/api/app/live',
@@ -37,7 +39,14 @@ abstract class LiveScoresApi implements ScoresApi
 
     public function makeRequest(): Collection
     {
-        return collect();
+        if (! $this->endpointPath) {
+            return collect();
+        }
+
+        return $this->client()
+            ->get("{$this->endpointPath}/1.00?MD=1")
+            ->throw()
+            ->collect();
     }
 
     protected function client(): PendingRequest
