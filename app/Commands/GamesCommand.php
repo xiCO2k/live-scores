@@ -8,16 +8,18 @@ use function Termwind\live;
 
 class GamesCommand extends Command
 {
-    protected $signature = 'games';
+    protected $signature = 'games
+                            {--sports= : The sports you want to only want to show}';
 
     public function handle(Scores $scores): void
     {
+        $sportsToShow = explode(',', $this->option('sports'));
         $updateInSeconds = 20;
-        $sports = $this->getScores();
+        $sports = $this->getScores($sportsToShow);
 
-        live(function () use (&$updateInSeconds, &$sports) {
+        live(function () use (&$updateInSeconds, &$sports, $sportsToShow) {
             if ($updateInSeconds === 0) {
-                $sports = $this->getScores();
+                $sports = $this->getScores($sportsToShow);
                 $updateInSeconds = 20;
             }
 
@@ -28,8 +30,11 @@ class GamesCommand extends Command
         })->refreshEvery(seconds: 1);
     }
 
-    private function getScores(): array
+    /**
+     * @param $sportsToShow string[]
+     */
+    private function getScores(array $sportsToShow = []): array
     {
-        return (new Scores())->getScores();
+        return (new Scores())->getScores($sportsToShow);
     }
 }

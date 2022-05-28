@@ -24,13 +24,21 @@ class Scores
     /**
      * Gets the Scores from the multiple sports available.
      *
+     * @param $sportsToShow string[]
      * @return array<string, Collection>
      */
-    public function getScores(): array
+    public function getScores(array $sportsToShow = []): array
     {
         $data = [];
+        $sports = self::$sportsAvailable;
 
-        foreach (self::$sportsAvailable as $sport => $class) {
+        $sportsToShow = array_filter($sportsToShow);
+        if ($sportsToShow !== []) {
+            $sports = collect(self::$sportsAvailable)
+                ->filter(fn ($class, $sport) => in_array($sport, $sportsToShow));
+        }
+
+        foreach ($sports as $sport => $class) {
             /** @var ScoresApi $class */
             $data[$sport] = (new $class())->fetch();
         }

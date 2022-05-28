@@ -15,5 +15,5 @@
         @endforeach
     </div>
 @empty
-    <div class="text-gray italic">There are no live games currently in progress</div>
+    <div class="text-gray italic">There are no live games currently in progress...</div>
 @endforelse
