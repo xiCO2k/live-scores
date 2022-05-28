@@ -12,7 +12,7 @@ class Scores
     /**
      * List of supported Sports.
      *
-     * @var string[]
+     * @var array<string, class-string>
      */
     public static $sportsAvailable = [
         'football' => FootballApi::class,

@@ -37,10 +37,7 @@ abstract class LiveScoresApi implements ScoresApi
 
     public function makeRequest(): Collection
     {
-        return $this->client()
-            ->get('/soccer/1.00?MD=1')
-            ->throw()
-            ->collect();
+        return collect();
     }
 
     protected function client(): PendingRequest
