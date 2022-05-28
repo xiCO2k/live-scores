@@ -38,6 +38,12 @@
             "Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "build": "php live-scores app:build live-scores",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
