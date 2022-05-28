@@ -1,5 +1,5 @@
 @props(['sport', 'leagues', 'title', 'titleClass'])
-<div class="px-3 uppercase font-bold {{ $titleClass }}">{{ $title }}</div>
+<div class="px-2 uppercase font-bold {{ $titleClass }}">{{ $title }}</div>
     @foreach ($leagues as $league)
         <div>
             <x-league-title
