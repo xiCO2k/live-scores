@@ -17,4 +17,6 @@
             />
         @endif
     @endforeach
+
+    <div class="italic text-gray">-- Updating scores in <b>{{ $updateInSeconds }}</b> {{ str()->plural('second', $updateInSeconds) }}.</div>
 </div>

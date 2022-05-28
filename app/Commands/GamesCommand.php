@@ -12,8 +12,24 @@ class GamesCommand extends Command
 
     public function handle(Scores $scores): void
     {
-        live(fn () => view('games', [
-            'sports' => $scores->getScores(),
-        ]))->refreshEvery(seconds: 20);
+        $updateInSeconds = 20;
+        $sports = $this->getScores();
+
+        live(function () use (&$updateInSeconds, &$sports) {
+            if ($updateInSeconds === 0) {
+                $sports = $this->getScores();
+                $updateInSeconds = 20;
+            }
+
+            return view('games', [
+                'sports' => $sports,
+                'updateInSeconds' => --$updateInSeconds,
+            ]);
+        })->refreshEvery(seconds: 1);
+    }
+
+    private function getScores(): array
+    {
+        return (new Scores)->getScores();
     }
 }
