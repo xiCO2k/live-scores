@@ -15,7 +15,6 @@
                 title="🏀 Basketball"
                 title-class="bg-orange-300 text-black"
             />
-        @endif
         @elseif ($sport === 'hockey')
             <x-sport-leagues
                 :sport="$sport"
