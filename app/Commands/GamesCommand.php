@@ -30,6 +30,6 @@ class GamesCommand extends Command
 
     private function getScores(): array
     {
-        return (new Scores)->getScores();
+        return (new Scores())->getScores();
     }
 }
