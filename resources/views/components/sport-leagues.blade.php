@@ -1,6 +1,6 @@
 @props(['sport', 'leagues', 'title', 'titleClass'])
 <div class="px-2 uppercase font-bold {{ $titleClass }}">{{ $title }}</div>
-@foreach ($leagues as $league)
+@forelse ($leagues as $league)
     <div>
         <x-league-title
             :category="$league['category']"
@@ -14,4 +14,6 @@
             />
         @endforeach
     </div>
-@endforeach
+@empty
+    <div class="text-gray italic">There are no live games currently in progress</div>
+@endforelse
