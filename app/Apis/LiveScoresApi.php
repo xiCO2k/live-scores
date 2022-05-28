@@ -43,6 +43,8 @@ abstract class LiveScoresApi implements ScoresApi
             return collect();
         }
 
+        dump("{$this->baseUrl}/{$this->endpointPath}/1.00?MD=1");
+
         return $this->client()
             ->get("{$this->endpointPath}/1.00?MD=1")
             ->throw()

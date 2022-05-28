@@ -4,5 +4,5 @@ namespace App\Apis;
 
 class FootballApi extends LiveScoresApi
 {
-    public ?string $endpointPath = '/football';
+    public ?string $endpointPath = '/soccer';
 }

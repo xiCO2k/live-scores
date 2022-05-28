@@ -4,6 +4,7 @@ namespace App;
 
 use App\Apis\BasketballApi;
 use App\Apis\FootballApi;
+use App\Apis\HockeyApi;
 use App\Contracts\ScoresApi;
 use Illuminate\Support\Collection;
 
@@ -17,6 +18,7 @@ class Scores
     public static $sportsAvailable = [
         'football' => FootballApi::class,
         'basketball' => BasketballApi::class,
+        'hockey' => HockeyApi::class,
     ];
 
     /**
