@@ -13,6 +13,23 @@ class GamesCommand extends Command
 
     public function handle()
     {
+        live(fn() => view('games', [
+            'leagues' => $this->getAvailableGames(),
+        ]))->refreshEvery(seconds: 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        die();
         $select = select(fn ($options, $active) => view('games', [
             'leagues' => $this->getAvailableGames(),
             'active' => $active,

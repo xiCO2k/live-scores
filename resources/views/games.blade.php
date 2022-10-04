@@ -8,7 +8,7 @@
         @foreach ($league['games'] as $game)
             <div>
                 <span class="mr-2">
-                    @if ($active && $active['value'] === $game['value'])
+                    @if (isset($active) && $active['value'] === $game['value'])
                         <b class="text-green">✔</b>
                     @else
                         -
